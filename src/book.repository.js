@@ -15,7 +15,7 @@ class BookRepository {
      * Nombre total de livre
      */
     getTotalCount() {
-
+	return this.db.get('books').size().value();
     }
 
     /**
