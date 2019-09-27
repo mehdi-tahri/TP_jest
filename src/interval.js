@@ -133,7 +133,46 @@ class Interval {
      * @returns {Interval[]}
      */
     exclusion(interval) {
+	if (this.start == interval.start && this.end == interval.end) return null;	
+	if(this.end < interval.start ){
+		return [this, interval];
+	}else if( interval.end < this.start){
+		return[interval,this];
+	}
+	let inter_start1=null;
+	let inter_start2=null;
+	let inter_end1=null;
+	let inter_end2=null;
+	let inter = this.intersection(interval);	
+	if((this.end>interval.start && interval.start>this.start) && interval.end> this.end){
+		inter_start1 = this.start;
+		inter_end1 = inter.start 
+		
+		inter_start2 = inter.end;
+		inter_end2 = interval.end;
+	}else if((interval.end> this.start && this.start> interval.start) && this.end> interval.end){
+		inter_start1 = interval.start;
+		inter_end1 = inter.start 
+		
+		inter_start2 = inter.end;
+		inter_end2 = this.end;
+	}else if((this.end>interval.start && interval.start>this.start) && interval.end< this.end){
+		inter_start1 = this.start;
+		inter_end1 = inter.start 
+		
+		inter_start2 = inter.end;
+		inter_end2 = this.end;
+	}else if ((interval.end> this.start && this.start> interval.start) && this.end < interval.end){
+		inter_start1 = interval.start;
+		inter_end1 = inter.start 
+		
+		inter_start2 = inter.end;
+		inter_end2 = interval.end;
+	}
 
+	let res1 = new Interval(inter_start1,inter_end1);
+	let res2 = new Interval(inter_start2,inter_end2);
+	return [res1,res2]
     };
 }
 
