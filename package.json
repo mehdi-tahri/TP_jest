@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "test.coverage" : "jest --coverage"
+    "test.coverage": "jest --coverage",
+    "test.mutation": "stryker run"
   },
   "jest": {
     "verbose": true,
@@ -32,6 +33,10 @@
   },
   "homepage": "https://github.com/Kirouane/test-tp#readme",
   "devDependencies": {
+    "@stryker-mutator/core": "^2.1.0",
+    "@stryker-mutator/html-reporter": "^2.1.0",
+    "@stryker-mutator/javascript-mutator": "^2.1.0",
+    "@stryker-mutator/jest-runner": "^2.1.0",
     "jest": "^24.1.0"
   }
 }
