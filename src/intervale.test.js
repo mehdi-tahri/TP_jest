@@ -50,6 +50,12 @@ describe('union', function () {
 	let res = new Interval(1,8);
         expect(intervalGenerale.union(interval2)).toStrictEqual(res);
     });
+    
+    test('Test intervale union with inter2 bigger than inter1', () => {
+	let interval2 = new Interval(1,14);
+	let res = new Interval(1,14);
+        expect(intervalGenerale.union(interval2)).toStrictEqual(res);
+    });
 
     test('Test intervale union (true) separate intervale', () => {
 	let interval2 = new Interval(1,3);
@@ -108,7 +114,11 @@ describe('exclusion', function () {
 		let res = [interval2,intervalGenerale];
         	expect(intervalGenerale.exclusion(interval2)).toStrictEqual(res);
     	});
-
+	test('Test intervale exclusion with inter1 and inter2 not crossing', () => {
+		let interval2 = new Interval(10,13);
+		let res = [intervalGenerale,interval2];
+        	expect(intervalGenerale.exclusion(interval2)).toStrictEqual(res);
+    	});
 	test('Test intervale exclusion with inter2 = inter1', () => {
 		let interval2 = new Interval(4,8);
 		let res = null;
