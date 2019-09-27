@@ -64,3 +64,35 @@ describe('union', function () {
     });
 
 });
+
+describe('intersection', function () {
+    	let intervalGenerale = new Interval(4,8);
+	
+
+	test('Test intervale intersection with inter2 in inter1', () => {
+		let interval2 = new Interval(5,6);
+		let res = new Interval(5,6);
+        	expect(intervalGenerale.intersection(interval2)).toStrictEqual(res)
+    	});
+	test('Test intervale intersection with inter1 in inter2', () => {
+		let interval2 = new Interval(1,16);
+		let res = new Interval(4,8);
+        	expect(intervalGenerale.intersection(interval2)).toStrictEqual(res)
+    	});
+	test('Test intervale intersection with part of inter2 in inter1', () => {
+		let interval2 = new Interval(5,10);
+		let res = new Interval(5,8);
+        	expect(intervalGenerale.intersection(interval2)).toStrictEqual(res)
+    	});
+
+	test('Test intervale intersection with part of inter1 in inter2', () => {
+		let interval2 = new Interval(3,6);
+		let res = new Interval(4,6);
+        	expect(intervalGenerale.intersection(interval2)).toStrictEqual(res)
+    	});
+	test('Test intervale intersection with inter2 and inter1 not crossing', () => {
+		let interval2 = new Interval(1,4);
+		
+        	expect(intervalGenerale.intersection(interval2)).toStrictEqual(null)
+    	});
+});
