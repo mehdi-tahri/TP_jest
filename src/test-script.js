@@ -11,6 +11,6 @@ repository.save({
 });
 */
 
-console.log(repository.getTotalPrice());
+//console.log(repository.getTotalPrice());
 //console.log(db.get('books').map("price").value());
-//console.log(res);
+console.log(repository.getBookByName(""));

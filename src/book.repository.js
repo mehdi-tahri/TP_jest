@@ -15,7 +15,7 @@ class BookRepository {
      * Nombre total de livre
      */
     getTotalCount() {
-	return this.db.get('books').size().value();
+	     return this.db.get('books').size().value();
     }
 
     /**
@@ -36,7 +36,12 @@ class BookRepository {
      * Retourne un livre
      */
     getBookByName(bookName) {
-
+      if(typeof bookName !=typeof "") throw 'Unable to compute getBookByName for bookName not String ';
+      let book = this.db.get('books').find({name : bookName}).value();
+      if(book != null){
+          return book;
+      }
+      return 'aucun livre pour ce nom';
     }
 
     /**
