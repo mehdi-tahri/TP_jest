@@ -3,92 +3,50 @@
     {
       "id": 1,
       "name": "test",
-      "price": 6.1,
+      "price": 30,
       "added_at": "2019-01-01"
     },
     {
-      "id": 1,
+      "id": 2,
+      "name": "harry pot de beurre",
+      "price": 6,
+      "added_at": "2019-01-01"
+    },
+    {
+      "id": 3,
+      "name": "eragon",
+      "price": 50,
+      "added_at": "2019-01-01"
+    },
+    {
+      "id": 4,
+      "name": "mahouka",
+      "price": 20000,
+      "added_at": "2019-01-01"
+    },
+    {
+      "id": 5,
+      "name": "jojo kimiwa no boken",
+      "price": 1000,
+      "added_at": "2019-01-01"
+    },
+    {
+      "id": 6,
       "name": "test",
       "price": 6.1,
-      "added_at": "2019-01-01"
+      "added_at": "2019-02-01"
     },
     {
-      "id": 1,
+      "id": 7,
       "name": "test",
       "price": 6.1,
-      "added_at": "2019-01-01"
+      "added_at": "2019-02-01"
     },
     {
-      "id": 1,
+      "id": 8,
       "name": "test",
       "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 6.1,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 0,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 0,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 0,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 0,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "test",
-      "price": 0,
-      "added_at": "2019-01-01"
-    },
-    {
-      "id": 1,
-      "name": "TEST",
-      "price": 6.1,
-      "added_at": "2019-01-01"
+      "added_at": "2019-02-01"
     }
   ]
 }
