@@ -22,8 +22,14 @@ class BookRepository {
      * Somme du prix de tous les livre
      */
     getTotalPrice() {
-
+	     let res = 0;
+	     let prices = this.db.get('books').map('price').value();
+       for(let i = 0; i<prices.length; i++){
+		       res += prices[i];
+	     }
+       return res;
     }
+
 
 
     /**
@@ -57,6 +63,5 @@ class BookRepository {
     }
 
 }
-
 
 module.exports = BookRepository;
