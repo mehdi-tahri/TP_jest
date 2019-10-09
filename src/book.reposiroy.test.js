@@ -67,4 +67,27 @@ describe('Book repository book by name', function () {
 
         expect(repository.getBookByName("test")).toBe(bookTest);
     });
+
+    test('return a book with a name in parameters (dont exist in bdd)', () => {
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            find : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue(null)
+
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(repository.getBookByName("Henrry pot de beurre")).toBe('aucun livre pour ce nom');
+    });
+    test('return a book with a number in parameters', () => {
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            find : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue([])
+
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(function () {repository.getBookByName(3)}).toThrow('Unable to compute getBookByName for bookName not String');
+    });
 });
