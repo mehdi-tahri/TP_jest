@@ -91,3 +91,63 @@ describe('Book repository book by name', function () {
         expect(function () {repository.getBookByName(3)}).toThrow('Unable to compute getBookByName for bookName not String');
     });
 });
+
+describe('Book repository count book add by month', function () {
+  let bookTest = [
+    {
+    "id": 1,
+    "name": "test",
+    "price": 30,
+    "added_at": "2019-01-01"
+    },
+    {
+      "id": 6,
+      "name": "test",
+      "price": 6.1,
+      "added_at": "2019-02-01"
+    },
+    {
+      "id": 7,
+      "name": "test",
+      "price": 6.1,
+      "added_at": "2019-02-01"
+    }];
+
+    test('Count book add by month with a  true value', () => {
+       let expected = [ {  year: '2019', month: 2, count: 1, count_cumulative: 1 },
+                        { year: '2019', month: 3, count: 2, count_cumulative: 3 } ];
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            filter : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue(bookTest)
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(repository.getCountBookAddedByMont("test")).toStrictEqual(expected);
+    });
+
+    test('Count book add by month with a no value', () => {
+       let expected = [ {  year: '2019', month: 2, count: 1, count_cumulative: 1 },
+                        { year: '2019', month: 3, count: 2, count_cumulative: 3 } ];
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            filter : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue(bookTest)
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(function () {repository.getCountBookAddedByMont()}).toThrow('Unable to compute getCountBookAddedByMont for bookName not String');
+    });
+
+    test('Count book add by month with a  true value (with no contend)', () => {
+      let bookTestFalse = [];
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            filter : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue(bookTestFalse)
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(function () {repository.getCountBookAddedByMont("testFalse")}).toThrow('Book doesnt exist');
+    });
+});

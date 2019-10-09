@@ -13,4 +13,5 @@ repository.save({
 
 //console.log(repository.getTotalPrice());
 //console.log(db.get('books').map("price").value());
-console.log(repository.getBookByName(3));
+let res = repository.getCountBookAddedByMont("test");
+console.log(res);
